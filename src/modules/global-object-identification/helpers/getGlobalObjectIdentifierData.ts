@@ -1,4 +1,4 @@
-import { decodeObject } from '../../shared/helpers/decodeObject';
+import { decodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { DecodedGlobalObjectIdentifier } from '../types/DecodedGlobalObjectIdentifier';
 
 /**

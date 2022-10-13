@@ -47,5 +47,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@jest-games-organization/backend-package-object-helpers": "^1.0.0"
+  }
 }

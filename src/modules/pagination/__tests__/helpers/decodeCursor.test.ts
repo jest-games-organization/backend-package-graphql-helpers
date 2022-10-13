@@ -1,4 +1,4 @@
-import { encodeObject } from '../../../shared/helpers/encodeObject';
+import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { decodeCursor } from '../../helpers/decodeCursor';
 
 describe('GIVEN the decodeCursor method', () => {

@@ -1,4 +1,4 @@
-import { decodeObject } from '../../shared';
+import { decodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { DecodedCursor } from '../types';
 
 /**

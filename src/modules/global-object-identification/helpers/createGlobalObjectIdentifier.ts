@@ -1,4 +1,4 @@
-import { encodeObject } from '../../shared/helpers/encodeObject';
+import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 
 /**
  * Creates the global object identifier.

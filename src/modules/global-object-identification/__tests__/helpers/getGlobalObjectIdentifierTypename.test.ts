@@ -1,4 +1,4 @@
-import { encodeObject } from '../../../shared/helpers/encodeObject';
+import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { getGlobalObjectIdentifierTypename } from '../../helpers/getGlobalObjectIdentifierTypename';
 
 describe('GIVEN the getGlobalObjectIdentifierTypename method', () => {

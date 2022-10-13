@@ -1,4 +1,4 @@
-import { encodeObject } from '../../shared/helpers/encodeObject';
+import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { Connection } from '../types/Connection';
 import { ConnectionArgs } from '../types/ConnectionArgs';
 import { createCursor } from './createCursor';
