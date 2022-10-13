@@ -1,5 +1,5 @@
 {
-  "name": "@jest-games/backend-package-graphql-helpers",
+  "name": "@jest-games-organization/backend-package-graphql-helpers",
   "description": "This Jest Games Organization backend package provides helper methods for shared functionality.",
   "version": "1.0.0",
   "author": "Jest Games Organization",
