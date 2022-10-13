@@ -15,6 +15,10 @@
     "GraphQL",
     "Helpers"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jest-games-organization/backend-package-graphql-helpers"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && rollup -c",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
