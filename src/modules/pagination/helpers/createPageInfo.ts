@@ -1,6 +1,6 @@
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { ConnectionArgs } from '../types/ConnectionArgs';
-import { PageInfo } from '../types/PageInfo';
+import { PageInfo } from '../../shared/types/PageInfo';
 import { createCursor } from './createCursor';
 
 /**
