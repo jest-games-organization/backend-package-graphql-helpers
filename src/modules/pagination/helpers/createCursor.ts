@@ -1,5 +1,5 @@
+import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
-import { ConnectionArgs } from '../types/ConnectionArgs';
 
 /**
  * Creates a cursor from the given record.

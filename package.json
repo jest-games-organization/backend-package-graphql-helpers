@@ -1,6 +1,6 @@
 {
   "name": "@jest-games-organization/backend-package-graphql-helpers",
-  "description": "This Jest Games Organization backend package provides GraphQL helper methods and types for shared functionality.",
+  "description": "This Jest Games Organization backend package provides GraphQL helper methods for shared functionality.",
   "version": "1.0.3",
   "author": "Jest Games Organization",
   "license": "ISC",
@@ -29,6 +29,8 @@
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-typescript": "^7.18.6",
+    "@jest-games-organization/backend-package-graphql-types": "^1.0.0",
+    "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@types/jest": "^29.1.1",
@@ -51,8 +53,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "@jest-games-organization/backend-package-object-helpers": "^1.0.0"
-  }
+  ]
 }

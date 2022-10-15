@@ -1,3 +1,4 @@
+import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createConnection } from '../../helpers/createConnection';
 import { createCursor } from '../../helpers/createCursor';
@@ -5,7 +6,6 @@ import { createEdge } from '../../helpers/createEdge';
 import { createEdges } from '../../helpers/createEdges';
 import { createNode } from '../../helpers/createNode';
 import { createPageInfo } from '../../helpers/createPageInfo';
-import { ConnectionArgs } from '../../types/ConnectionArgs';
 
 describe('GIVEN the createConnection method', () => {
   let records: { [key: string]: unknown }[];

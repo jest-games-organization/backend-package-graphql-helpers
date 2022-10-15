@@ -1,6 +1,5 @@
+import { Connection, ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
-import { Connection } from '../types/Connection';
-import { ConnectionArgs } from '../types/ConnectionArgs';
 import { createCursor } from './createCursor';
 import { createEdge } from './createEdge';
 import { createEdges } from './createEdges';

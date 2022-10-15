@@ -1,8 +1,8 @@
+import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createCursor } from '../../helpers/createCursor';
 import { createEdge } from '../../helpers/createEdge';
 import { createNode } from '../../helpers/createNode';
-import { ConnectionArgs } from '../../types/ConnectionArgs';
 
 describe('GIVEN the createEdge method', () => {
   let record: { [key: string]: unknown };

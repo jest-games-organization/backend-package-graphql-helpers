@@ -1,6 +1,5 @@
+import { ConnectionArgs, PageInfo } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
-import { ConnectionArgs } from '../types/ConnectionArgs';
-import { PageInfo } from '../../shared/types/PageInfo';
 import { createCursor } from './createCursor';
 
 /**

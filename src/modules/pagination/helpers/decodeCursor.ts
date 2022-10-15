@@ -1,5 +1,5 @@
+import { DecodedCursor } from '@jest-games-organization/backend-package-graphql-types';
 import { decodeObject } from '@jest-games-organization/backend-package-object-helpers';
-import { DecodedCursor } from '../types';
 
 /**
  * Decode the cursor.

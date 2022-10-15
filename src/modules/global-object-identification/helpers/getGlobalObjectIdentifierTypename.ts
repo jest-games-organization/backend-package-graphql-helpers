@@ -1,5 +1,5 @@
+import { DecodedGlobalObjectIdentifier } from '@jest-games-organization/backend-package-graphql-types';
 import { decodeObject } from '@jest-games-organization/backend-package-object-helpers';
-import { DecodedGlobalObjectIdentifier } from '../types/DecodedGlobalObjectIdentifier';
 
 /**
  * Get the global object identifier typename.

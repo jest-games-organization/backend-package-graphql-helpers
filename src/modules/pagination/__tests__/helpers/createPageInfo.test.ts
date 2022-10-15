@@ -1,7 +1,7 @@
+import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createCursor } from '../../helpers/createCursor';
 import { createPageInfo } from '../../helpers/createPageInfo';
-import { ConnectionArgs } from '../../types/ConnectionArgs';
 
 describe('GIVEN the createPageInfo method', () => {
   let records: { [key: string]: unknown }[];
