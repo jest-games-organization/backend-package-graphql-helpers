@@ -5,3 +5,5 @@ export { createEdges } from './createEdges';
 export { createNode } from './createNode';
 export { createPageInfo } from './createPageInfo';
 export { decodeCursor } from './decodeCursor';
+export { encodeCursor } from './encodeCursor';
+export { verifyDecodedCursor } from './verifyDecodedCursor';
