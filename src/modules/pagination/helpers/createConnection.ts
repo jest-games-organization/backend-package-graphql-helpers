@@ -19,13 +19,13 @@ export const createConnection = <Record extends { [key: string]: unknown }, Node
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,
-  args: ConnectionArgs<Record>,
+  args: ConnectionArgs<Node>,
   config: {
-    createCursor?: typeof createCursor<Record>;
+    createCursor?: typeof createCursor<Record, Node>;
     createEdge?: typeof createEdge<Record, Node>;
     createEdges?: typeof createEdges<Record, Node>;
     createNode?: typeof createNode<Record, Node>;
-    createPageInfo?: typeof createPageInfo<Record>;
+    createPageInfo?: typeof createPageInfo<Record, Node>;
     encodeObject?: typeof encodeObject;
   } = { createCursor, createEdge, createEdges, createNode, createPageInfo, encodeObject },
 ): Connection<Node> => {

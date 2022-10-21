@@ -1,9 +1,9 @@
-import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
+import { ConnectionArgs, OrderByDirection } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createCursor } from '../../helpers/createCursor';
 
 describe('GIVEN the createCursor method', () => {
-  let record: { [key: string]: unknown };
+  let record: { [key: string]: any };
 
   beforeEach(() => {
     record = { id: 'mockId' };
@@ -22,7 +22,7 @@ describe('GIVEN the createCursor method', () => {
 
       describe('WHEN the "orderBy" field is provided', () => {
         test('THEN it should return the cursor', () => {
-          const args: ConnectionArgs<typeof record> = { orderBy: [{ id: 'asc' }] };
+          const args: ConnectionArgs<typeof record> = { orderBy: [{ id: OrderByDirection.Ascending }] };
           const response = createCursor(record, args);
           const expected = encodeObject({ data: { id: 'mockId' }, args });
           expect(response).toEqual(expected);

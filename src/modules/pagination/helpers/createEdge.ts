@@ -12,9 +12,9 @@ import { createNode } from './createNode';
  */
 export const createEdge = <Record extends { [key: string]: unknown }, Node extends { [key: string]: unknown }>(
   record: Record,
-  args: ConnectionArgs<Record>,
+  args: ConnectionArgs<Node>,
   config: {
-    createCursor?: typeof createCursor<Record>;
+    createCursor?: typeof createCursor<Record, Node>;
     createNode?: typeof createNode<Record, Node>;
     encodeObject?: typeof encodeObject;
   } = { createCursor, createNode, encodeObject },
