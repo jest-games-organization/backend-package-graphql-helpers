@@ -26,10 +26,10 @@ export const createPageInfo = <Record extends { [key: string]: any }, Node exten
   const handleEncodeCursor = config.encodeObject ?? encodeObject;
   // Create the start cursor.
   const startRecord = records[0];
-  const startCursor = handleCreateCursor(startRecord, args, { encodeObject: handleEncodeCursor });
+  const startCursor = startRecord ? handleCreateCursor(startRecord, args, { encodeObject: handleEncodeCursor }) : '';
   const endRecord = records[records.length - 1];
   // Create the end cursor.
-  const endCursor = handleCreateCursor(endRecord, args, { encodeObject: handleEncodeCursor });
+  const endCursor = endRecord ? handleCreateCursor(endRecord, args, { encodeObject: handleEncodeCursor }) : '';
   // Return the page info.
   return { hasNextPage, hasPreviousPage, startCursor, endCursor };
 };

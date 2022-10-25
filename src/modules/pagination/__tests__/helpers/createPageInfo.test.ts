@@ -10,13 +10,52 @@ describe('GIVEN the createPageInfo method', () => {
   let args: ConnectionArgs<typeof records[0]>;
 
   beforeEach(() => {
-    records = [{ id: 'mockId1' }, { id: 'mockId2' }];
     hasNextPage = false;
     hasPreviousPage = false;
     args = {};
   });
 
+  describe('AND the "records" prop', () => {
+    describe('WHEN the "records" prop is an empty array', () => {
+      beforeEach(() => {
+        records = [];
+      });
+
+      test('THEN it should return the page info', () => {
+        const response = createPageInfo(records, hasNextPage, hasPreviousPage, args);
+        const expected = {
+          hasNextPage,
+          hasPreviousPage,
+          startCursor: '',
+          endCursor: '',
+        };
+        expect(response).toEqual(expected);
+      });
+    });
+
+    describe('when the "records" prop is an array with multiple records', () => {
+      beforeEach(() => {
+        records = [{ id: 'mockId1' }, { id: 'mockId2' }];
+      });
+
+      test('THEN it should return the page info', () => {
+        const response = createPageInfo(records, hasNextPage, hasPreviousPage, args);
+        const expected = {
+          hasNextPage,
+          hasPreviousPage,
+          startCursor: encodeObject({ data: {}, args }),
+          endCursor: encodeObject({ data: {}, args }),
+        };
+        expect(response).toEqual(expected);
+      });
+    });
+  });
+
   describe('AND the "config" prop', () => {
+    beforeEach(() => {
+      records = [{ id: 'mockId1' }, { id: 'mockId2' }];
+    });
+
     describe('WHEN the "config" prop is not provided', () => {
       test('THEN it should return the page info', () => {
         const response = createPageInfo(records, hasNextPage, hasPreviousPage, args);
