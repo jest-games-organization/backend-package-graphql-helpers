@@ -5,7 +5,7 @@ import { DecodedCursor } from '@jest-games-organization/backend-package-graphql-
  * @param decodedCursor The decoded cursor.
  * @returns Success.
  */
-export const verifyDecodedCursor = <Record extends { [key: string]: unknown }>(
+export const verifyDecodedCursor = <Record extends { [key: string]: any }>(
   decodedCursor: DecodedCursor<Record>,
 ): boolean => {
   // Deconstruct the decoded cursor.

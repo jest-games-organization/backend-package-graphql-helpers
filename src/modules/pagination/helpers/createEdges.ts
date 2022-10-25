@@ -11,7 +11,7 @@ import { createNode } from './createNode';
  * @param config The configuration.
  * @returns The edges.
  */
-export const createEdges = <Record extends { [key: string]: unknown }, Node extends { [key: string]: unknown }>(
+export const createEdges = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
   records: Record[],
   args: ConnectionArgs<Node>,
   config: {

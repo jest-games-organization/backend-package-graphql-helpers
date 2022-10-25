@@ -9,8 +9,8 @@ import { encodeObject } from '@jest-games-organization/backend-package-object-he
  */
 export const createGlobalObjectIdentifier = (
   typename: string,
-  data: { [key: string]: unknown },
-  config: { encodeObject?: typeof encodeObject<unknown> } = { encodeObject },
+  data: { [key: string]: any },
+  config: { encodeObject?: typeof encodeObject<any> } = { encodeObject },
 ): string => {
   // Get the handlers.
   const handleEncodeIdentifier = config.encodeObject || encodeObject;

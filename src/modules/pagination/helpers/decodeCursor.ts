@@ -7,7 +7,7 @@ import { verifyDecodedCursor } from './verifyDecodedCursor';
  * @param cursor The cursor to decode.
  * @returns The decoded cursor.
  */
-export const decodeCursor = <Record extends { [key: string]: unknown }>(cursor: string): DecodedCursor<Record> => {
+export const decodeCursor = <Record extends { [key: string]: any }>(cursor: string): DecodedCursor<Record> => {
   // Decode the cursor.
   const decodedCursor = decodeObject<DecodedCursor<Record>>(cursor);
 

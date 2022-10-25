@@ -6,7 +6,7 @@ import { createEdges } from '../../helpers/createEdges';
 import { createNode } from '../../helpers/createNode';
 
 describe('GIVEN the createEdges method', () => {
-  let records: { [key: string]: unknown }[];
+  let records: { [key: string]: any }[];
   let args: ConnectionArgs<typeof records[0]>;
 
   beforeEach(() => {

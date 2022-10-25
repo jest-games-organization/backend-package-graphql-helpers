@@ -11,7 +11,7 @@ import { createCursor } from './createCursor';
  * @param config The configuration.
  * @returns The page info.
  */
-export const createPageInfo = <Record extends { [key: string]: unknown }, Node extends { [key: string]: unknown }>(
+export const createPageInfo = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,

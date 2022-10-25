@@ -15,7 +15,7 @@ import { createPageInfo } from './createPageInfo';
  * @param config The configuration.
  * @returns The connection.
  */
-export const createConnection = <Record extends { [key: string]: unknown }, Node extends { [key: string]: unknown }>(
+export const createConnection = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,

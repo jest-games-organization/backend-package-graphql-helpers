@@ -8,7 +8,7 @@ import { createNode } from '../../helpers/createNode';
 import { createPageInfo } from '../../helpers/createPageInfo';
 
 describe('GIVEN the createConnection method', () => {
-  let records: { [key: string]: unknown }[];
+  let records: { [key: string]: any }[];
   let hasNextPage: boolean;
   let hasPreviousPage: boolean;
   let args: ConnectionArgs<typeof records[0]>;

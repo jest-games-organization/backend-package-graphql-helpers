@@ -4,7 +4,7 @@ import { createCursor } from '../../helpers/createCursor';
 import { createPageInfo } from '../../helpers/createPageInfo';
 
 describe('GIVEN the createPageInfo method', () => {
-  let records: { [key: string]: unknown }[];
+  let records: { [key: string]: any }[];
   let hasNextPage: boolean;
   let hasPreviousPage: boolean;
   let args: ConnectionArgs<typeof records[0]>;

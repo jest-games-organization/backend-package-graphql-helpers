@@ -3,7 +3,7 @@ import { createGlobalObjectIdentifier } from '../../helpers/createGlobalObjectId
 
 describe('GIVEN the createGlobalObjectIdentifier method', () => {
   let typename: string;
-  let identifier: { [key: string]: unknown };
+  let identifier: { [key: string]: any };
 
   beforeEach(() => {
     typename = 'mockTypename';
