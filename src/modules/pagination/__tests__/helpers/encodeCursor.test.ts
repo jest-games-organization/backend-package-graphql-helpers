@@ -1,4 +1,4 @@
-import { DecodedCursor, OrderByDirection } from '@jest-games-organization/backend-package-graphql-types';
+import { DecodedCursor, SortOrder } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { encodeCursor } from '../../helpers/encodeCursor';
 
@@ -8,7 +8,7 @@ describe('GIVEN the encodeCursor method', () => {
   beforeEach(() => {
     decodedCursor = {
       data: { id: 'mockId' },
-      args: { orderBy: [{ id: OrderByDirection.Ascending }] },
+      args: { orderBy: [{ id: SortOrder.Ascending }] },
     };
   });
 

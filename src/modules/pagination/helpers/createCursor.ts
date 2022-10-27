@@ -17,10 +17,12 @@ export const createCursor = <Record extends { [key: string]: any }, Node extends
 ): string => {
   // Get the handlers.
   const handleEncodeObject = config.encodeObject || encodeObject;
+
   // Get the cursor fields.
   const orderByKeys = args.orderBy?.map((option) => Object.keys(option)[0]) ?? [];
   const entries = Object.entries(record).filter(([key]) => orderByKeys.includes(key));
   const data = Object.fromEntries(entries);
+
   // Return the cursor.
   return handleEncodeObject({ data, args });
 };

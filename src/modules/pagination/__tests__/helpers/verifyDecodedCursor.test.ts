@@ -1,4 +1,4 @@
-import { DecodedCursor, OrderByDirection } from '@jest-games-organization/backend-package-graphql-types';
+import { DecodedCursor, SortOrder } from '@jest-games-organization/backend-package-graphql-types';
 import { verifyDecodedCursor } from '../../helpers/verifyDecodedCursor';
 
 describe('GIVEN the verifyDecodedCursor method', () => {
@@ -35,7 +35,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
       beforeEach(() => {
         decodedCursor = {
           data: { id: 'mockId' },
-          args: { orderBy: [{ id: OrderByDirection.Ascending }, { a: OrderByDirection.Descending }] },
+          args: { orderBy: [{ id: SortOrder.Ascending }, { a: SortOrder.Descending }] },
         };
       });
 
@@ -52,7 +52,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
       beforeEach(() => {
         decodedCursor = {
           data: { id: 'mockId', a: 'mockA' },
-          args: { orderBy: [{ id: OrderByDirection.Ascending }, { b: OrderByDirection.Descending }] },
+          args: { orderBy: [{ id: SortOrder.Ascending }, { b: SortOrder.Descending }] },
         };
       });
 
@@ -70,7 +70,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
     beforeEach(() => {
       decodedCursor = {
         data: { id: 'mockId', a: 'mockA' },
-        args: { orderBy: [{ id: OrderByDirection.Ascending }, { a: OrderByDirection.Descending }] },
+        args: { orderBy: [{ id: SortOrder.Ascending }, { a: SortOrder.Descending }] },
       };
     });
 
