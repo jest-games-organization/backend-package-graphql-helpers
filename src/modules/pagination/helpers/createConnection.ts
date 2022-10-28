@@ -1,5 +1,6 @@
 import { Connection, ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { createCursor } from './createCursor';
 import { createEdge } from './createEdge';
 import { createEdges } from './createEdges';
@@ -15,7 +16,7 @@ import { createPageInfo } from './createPageInfo';
  * @param config The configuration.
  * @returns The connection.
  */
-export const createConnection = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
+export const createConnection = <Record extends DataObject, Node extends DataObject>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,

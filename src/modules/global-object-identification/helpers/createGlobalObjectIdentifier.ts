@@ -1,4 +1,5 @@
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 
 /**
  * Creates the global object identifier.
@@ -9,7 +10,7 @@ import { encodeObject } from '@jest-games-organization/backend-package-object-he
  */
 export const createGlobalObjectIdentifier = (
   typename: string,
-  data: { [key: string]: any },
+  data: DataObject,
   config: { encodeObject?: typeof encodeObject<any> } = { encodeObject },
 ): string => {
   // Get the handlers.

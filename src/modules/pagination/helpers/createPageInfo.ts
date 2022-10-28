@@ -1,5 +1,6 @@
 import { ConnectionArgs, PageInfo } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { createCursor } from './createCursor';
 
 /**
@@ -11,7 +12,7 @@ import { createCursor } from './createCursor';
  * @param config The configuration.
  * @returns The page info.
  */
-export const createPageInfo = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
+export const createPageInfo = <Record extends DataObject, Node extends DataObject>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,

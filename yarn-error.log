@@ -2,7 +2,7 @@ Arguments:
   /home/conrardy/.nvm/versions/node/v16.17.0/bin/node /usr/share/yarn/bin/yarn.js publish --access public
 
 PATH: 
-  /tmp/yarn--1664943747008-0.24000463239116732:/home/conrardy/jest-games/backend-package-graphql-helpers/node_modules/.bin:/home/conrardy/.config/yarn/link/node_modules/.bin:/home/conrardy/.yarn/bin:/home/conrardy/.nvm/versions/node/v16.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/conrardy/.vscode-server/bin/74b1f979648cc44d385a2286793c226e611f59e7/bin/remote-cli:/home/conrardy/.local/bin:/home/conrardy/.rover/bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.15.2713.0_x64__8wekyb3d8bbwe:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/conra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/conra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/conra/.dotnet/tools:/snap/bin
+  /tmp/yarn--1666828983626-0.7899038267190543:/home/conrardy/jest-games-organization/backend-package-graphql-helpers/node_modules/.bin:/home/conrardy/.config/yarn/link/node_modules/.bin:/home/conrardy/.yarn/bin:/home/conrardy/.nvm/versions/node/v16.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/conrardy/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/bin/remote-cli:/home/conrardy/.local/bin:/home/conrardy/.rover/bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/dotnet/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/conra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/conra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/conra/.dotnet/tools:/snap/bin
 
 Yarn version: 
   1.22.5
@@ -28,16 +28,26 @@ Trace:
 
 npm manifest: 
   {
-    "name": "@jest-games/backend-package-graphql-helpers",
-    "description": "This package provides GraphQL helper methods for common functionality like Pagination and Global Object Identification.",
-    "version": "1.0.4",
+    "name": "@jest-games-organization/backend-package-graphql-helpers",
+    "description": "This Jest Games Organization backend package provides GraphQL helper methods for shared functionality.",
+    "version": "1.0.12",
     "author": "Jest Games Organization",
     "license": "ISC",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
     "private": false,
-    "keywords": [],
+    "keywords": [
+      "Jest Games Organization",
+      "Backend",
+      "Package",
+      "GraphQL",
+      "Helpers"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jest-games-organization/backend-package-graphql-helpers"
+    },
     "scripts": {
       "build": "rm -rf dist && tsc --emitDeclarationOnly && rollup -c",
       "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
@@ -48,6 +58,8 @@ npm manifest:
     "devDependencies": {
       "@babel/core": "^7.19.1",
       "@babel/preset-typescript": "^7.18.6",
+      "@jest-games-organization/backend-package-graphql-types": "^1.0.15",
+      "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
       "@rollup/plugin-babel": "^5.3.1",
       "@rollup/plugin-node-resolve": "^14.1.0",
       "@types/jest": "^29.1.1",
@@ -67,6 +79,10 @@ npm manifest:
       "rollup-plugin-dts": "^4.2.2",
       "ts-jest": "^29.0.3",
       "typescript": "^4.8.4"
+    },
+    "peerDependencies": {
+      "@jest-games-organization/backend-package-graphql-types": "^1.0.15",
+      "@jest-games-organization/backend-package-object-helpers": "^1.0.2"
     },
     "files": [
       "dist"
@@ -493,6 +509,16 @@ Lockfile:
     version "0.1.3"
     resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
     integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
+  
+  "@jest-games-organization/backend-package-graphql-types@^1.0.15":
+    version "1.0.15"
+    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.15.tgz#85ed2e6ede322765e7bfe8897eeb348cb3b3b584"
+    integrity sha512-IR0NtunAtcUR6UG8Hu+/VUTybPBHSLMIi6Gez/s+X/O+06RGA0ctit7/DE5/BgIkOCwlPa0/ktHaXVBGFWWK3g==
+  
+  "@jest-games-organization/backend-package-object-helpers@^1.0.2":
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-object-helpers/-/backend-package-object-helpers-1.0.2.tgz#3182eb3ffb292723183957ea4bb5e934fc323bc3"
+    integrity sha512-EIqClioPqRiZ0bPJFcpNM99jM8F8QZRdQvr9BJx73hzrGSRA3xgTd3K0FKwTQ6BlyosLofVy7hcsEmXpHXh65A==
   
   "@jest/console@^29.1.2":
     version "29.1.2"

@@ -1,5 +1,6 @@
 import { DecodedCursor } from '@jest-games-organization/backend-package-graphql-types';
 import { decodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { verifyDecodedCursor } from './verifyDecodedCursor';
 
 /**
@@ -7,7 +8,7 @@ import { verifyDecodedCursor } from './verifyDecodedCursor';
  * @param cursor The cursor to decode.
  * @returns The decoded cursor.
  */
-export const decodeCursor = <Record extends { [key: string]: any }>(cursor: string): DecodedCursor<Record> => {
+export const decodeCursor = <Record extends DataObject>(cursor: string): DecodedCursor<Record> => {
   // Decode the cursor.
   const decodedCursor = decodeObject<DecodedCursor<Record>>(cursor);
 

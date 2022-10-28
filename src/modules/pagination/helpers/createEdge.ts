@@ -1,5 +1,6 @@
 import { ConnectionArgs, Edge } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { createCursor } from './createCursor';
 import { createNode } from './createNode';
 
@@ -10,7 +11,7 @@ import { createNode } from './createNode';
  * @param config The configuration.
  * @returns The edge.
  */
-export const createEdge = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
+export const createEdge = <Record extends DataObject, Node extends DataObject>(
   record: Record,
   args: ConnectionArgs<Node>,
   config: {

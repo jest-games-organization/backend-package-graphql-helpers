@@ -1,5 +1,6 @@
 import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
+import { DataObject } from '@jest-games-organization/backend-package-object-types';
 
 /**
  * Creates a cursor from the given record.
@@ -8,7 +9,7 @@ import { encodeObject } from '@jest-games-organization/backend-package-object-he
  * @param config The configuration.
  * @returns The cursor.
  */
-export const createCursor = <Record extends { [key: string]: any }, Node extends { [key: string]: any }>(
+export const createCursor = <Record extends DataObject, Node extends DataObject>(
   record: Record,
   args: ConnectionArgs<Node>,
   config: {
