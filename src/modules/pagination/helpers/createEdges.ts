@@ -14,9 +14,9 @@ import { createNode } from './createNode';
  */
 export const createEdges = <Record extends DataObject, Node extends DataObject>(
   records: Record[],
-  args: ConnectionArgs<Node>,
+  args: ConnectionArgs<Record>,
   config: {
-    createCursor?: typeof createCursor<Record, Node>;
+    createCursor?: typeof createCursor<Record>;
     createEdge?: typeof createEdge<Record, Node>;
     createNode?: typeof createNode<Record, Node>;
     encodeObject?: typeof encodeObject;

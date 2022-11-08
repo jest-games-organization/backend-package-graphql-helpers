@@ -12,13 +12,13 @@ import { createCursor } from './createCursor';
  * @param config The configuration.
  * @returns The page info.
  */
-export const createPageInfo = <Record extends DataObject, Node extends DataObject>(
+export const createPageInfo = <Record extends DataObject>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,
-  args: ConnectionArgs<Node>,
+  args: ConnectionArgs<Record>,
   config: {
-    createCursor?: typeof createCursor<Record, Node>;
+    createCursor?: typeof createCursor<Record>;
     encodeObject?: typeof encodeObject;
   } = { createCursor, encodeObject },
 ): PageInfo => {

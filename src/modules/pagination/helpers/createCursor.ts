@@ -9,9 +9,9 @@ import { DataObject } from '@jest-games-organization/backend-package-object-type
  * @param config The configuration.
  * @returns The cursor.
  */
-export const createCursor = <Record extends DataObject, Node extends DataObject>(
+export const createCursor = <Record extends DataObject>(
   record: Record,
-  args: ConnectionArgs<Node>,
+  args: ConnectionArgs<Record>,
   config: {
     encodeObject?: typeof encodeObject;
   } = { encodeObject },
