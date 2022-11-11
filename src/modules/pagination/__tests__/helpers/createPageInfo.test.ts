@@ -7,12 +7,12 @@ describe('GIVEN the createPageInfo method', () => {
   let records: { [key: string]: any }[];
   let hasNextPage: boolean;
   let hasPreviousPage: boolean;
-  let args: ConnectionArgs<typeof records[0]>;
+  let args: { orderBy: { [key in keyof typeof records[0]]?: 'asc' | 'desc' }[] };
 
   beforeEach(() => {
     hasNextPage = false;
     hasPreviousPage = false;
-    args = {};
+    args = { orderBy: [{ id: 'asc' }] };
   });
 
   describe('AND the "records" prop', () => {
@@ -43,8 +43,8 @@ describe('GIVEN the createPageInfo method', () => {
         const expected = {
           hasNextPage,
           hasPreviousPage,
-          startCursor: encodeObject({ data: {}, args }),
-          endCursor: encodeObject({ data: {}, args }),
+          startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+          endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
         };
         expect(response).toEqual(expected);
       });
@@ -62,8 +62,8 @@ describe('GIVEN the createPageInfo method', () => {
         const expected = {
           hasNextPage,
           hasPreviousPage,
-          startCursor: encodeObject({ data: {}, args }),
-          endCursor: encodeObject({ data: {}, args }),
+          startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+          endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
         };
         expect(response).toEqual(expected);
       });
@@ -78,8 +78,8 @@ describe('GIVEN the createPageInfo method', () => {
             const expected = {
               hasNextPage,
               hasPreviousPage,
-              startCursor: encodeObject({ data: {}, args }),
-              endCursor: encodeObject({ data: {}, args }),
+              startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+              endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
             };
             expect(response).toEqual(expected);
           });
@@ -92,8 +92,8 @@ describe('GIVEN the createPageInfo method', () => {
             const expected = {
               hasNextPage,
               hasPreviousPage,
-              startCursor: encodeObject({ data: {}, args }),
-              endCursor: encodeObject({ data: {}, args }),
+              startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+              endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
             };
             expect(response).toEqual(expected);
           });
@@ -108,8 +108,8 @@ describe('GIVEN the createPageInfo method', () => {
             const expected = {
               hasNextPage,
               hasPreviousPage,
-              startCursor: encodeObject({ data: {}, args }),
-              endCursor: encodeObject({ data: {}, args }),
+              startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+              endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
             };
             expect(response).toEqual(expected);
           });
@@ -122,8 +122,8 @@ describe('GIVEN the createPageInfo method', () => {
             const expected = {
               hasNextPage,
               hasPreviousPage,
-              startCursor: encodeObject({ data: {}, args }),
-              endCursor: encodeObject({ data: {}, args }),
+              startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+              endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
             };
             expect(response).toEqual(expected);
           });

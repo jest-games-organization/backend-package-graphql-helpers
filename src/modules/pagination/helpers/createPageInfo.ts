@@ -1,4 +1,4 @@
-import { ConnectionArgs, PageInfo } from '@jest-games-organization/backend-package-graphql-types';
+import { ConnectionArgs, OrderByInput, PageInfo } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { createCursor } from './createCursor';
@@ -16,7 +16,7 @@ export const createPageInfo = <Record extends DataObject>(
   records: Record[],
   hasNextPage: boolean,
   hasPreviousPage: boolean,
-  args: ConnectionArgs<Record>,
+  args: { orderBy: { [key in keyof Record]?: 'asc' | 'desc' }[] },
   config: {
     createCursor?: typeof createCursor<Record>;
     encodeObject?: typeof encodeObject;

@@ -1,4 +1,3 @@
-import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { DataObject } from '@jest-games-organization/backend-package-object-types';
 
@@ -11,7 +10,7 @@ import { DataObject } from '@jest-games-organization/backend-package-object-type
  */
 export const createCursor = <Record extends DataObject>(
   record: Record,
-  args: ConnectionArgs<Record>,
+  args: { orderBy: { [key in keyof Record]?: 'asc' | 'desc' }[] },
   config: {
     encodeObject?: typeof encodeObject;
   } = { encodeObject },
@@ -20,7 +19,7 @@ export const createCursor = <Record extends DataObject>(
   const handleEncodeObject = config.encodeObject || encodeObject;
 
   // Get the cursor fields.
-  const orderByKeys = args.orderBy?.map((option) => Object.keys(option)[0]) ?? [];
+  const orderByKeys = args.orderBy.map((option) => Object.keys(option)[0]);
   const entries = Object.entries(record).filter(([key]) => orderByKeys.includes(key));
   const data = Object.fromEntries(entries);
 

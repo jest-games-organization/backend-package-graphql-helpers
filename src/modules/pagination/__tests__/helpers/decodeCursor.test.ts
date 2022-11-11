@@ -9,7 +9,7 @@ describe('GIVEN the decodeCursor method', () => {
   beforeEach(() => {
     decodedCursor = {
       data: { id: 'mockId' },
-      args: { orderBy: [{ id: SortOrder.Descending }] },
+      args: { orderBy: [{ id: 'asc' }] },
     };
     cursor = encodeObject(decodedCursor);
   });

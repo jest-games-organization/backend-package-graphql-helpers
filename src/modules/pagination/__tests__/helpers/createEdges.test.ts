@@ -1,4 +1,3 @@
-import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createCursor } from '../../helpers/createCursor';
 import { createEdge } from '../../helpers/createEdge';
@@ -7,11 +6,11 @@ import { createNode } from '../../helpers/createNode';
 
 describe('GIVEN the createEdges method', () => {
   let records: { [key: string]: any }[];
-  let args: ConnectionArgs<typeof records[0]>;
+  let args: { orderBy: { [key in keyof typeof records[0]]?: 'asc' | 'desc' }[] };
 
   beforeEach(() => {
     records = [{ id: 'mockId1' }, { id: 'mockId2' }];
-    args = {};
+    args = { orderBy: [{ id: 'asc' }] };
   });
 
   describe('AND the "config" prop', () => {
@@ -19,8 +18,8 @@ describe('GIVEN the createEdges method', () => {
       test('THEN it should return the edges', () => {
         const response = createEdges(records, args);
         const expected = [
-          { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-          { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+          { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+          { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
         ];
         expect(response).toEqual(expected);
       });
@@ -33,8 +32,8 @@ describe('GIVEN the createEdges method', () => {
             const config = {};
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -45,8 +44,8 @@ describe('GIVEN the createEdges method', () => {
             const config = { createCursor };
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -59,8 +58,8 @@ describe('GIVEN the createEdges method', () => {
             const config = {};
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -71,8 +70,8 @@ describe('GIVEN the createEdges method', () => {
             const config = { createEdge };
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -85,8 +84,8 @@ describe('GIVEN the createEdges method', () => {
             const config = {};
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -97,8 +96,8 @@ describe('GIVEN the createEdges method', () => {
             const config = { createNode };
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -111,8 +110,8 @@ describe('GIVEN the createEdges method', () => {
             const config = {};
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });
@@ -123,8 +122,8 @@ describe('GIVEN the createEdges method', () => {
             const config = { encodeObject };
             const response = createEdges(records, args, config);
             const expected = [
-              { node: { id: 'mockId1' }, cursor: encodeObject({ data: {}, args }) },
-              { node: { id: 'mockId2' }, cursor: encodeObject({ data: {}, args }) },
+              { node: { id: 'mockId1' }, cursor: encodeObject({ data: { id: 'mockId1' }, args }) },
+              { node: { id: 'mockId2' }, cursor: encodeObject({ data: { id: 'mockId2' }, args }) },
             ];
             expect(response).toEqual(expected);
           });

@@ -1,4 +1,4 @@
-import { ConnectionArgs, Edge } from '@jest-games-organization/backend-package-graphql-types';
+import { ConnectionArgs, Edge, OrderByInput } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { DataObject } from '@jest-games-organization/backend-package-object-types';
 import { createCursor } from './createCursor';
@@ -14,7 +14,7 @@ import { createNode } from './createNode';
  */
 export const createEdges = <Record extends DataObject, Node extends DataObject>(
   records: Record[],
-  args: ConnectionArgs<Record>,
+  args: { orderBy: { [key in keyof Record]?: 'asc' | 'desc' }[] },
   config: {
     createCursor?: typeof createCursor<Record>;
     createEdge?: typeof createEdge<Record, Node>;

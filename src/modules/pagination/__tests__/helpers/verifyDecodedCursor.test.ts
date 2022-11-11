@@ -35,7 +35,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
       beforeEach(() => {
         decodedCursor = {
           data: { id: 'mockId' },
-          args: { orderBy: [{ id: SortOrder.Ascending }, { a: SortOrder.Descending }] },
+          args: { orderBy: [{ id: 'asc' }, { a: 'desc' }] },
         };
       });
 
@@ -52,7 +52,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
       beforeEach(() => {
         decodedCursor = {
           data: { id: 'mockId', a: 'mockA' },
-          args: { orderBy: [{ id: SortOrder.Ascending }, { b: SortOrder.Descending }] },
+          args: { orderBy: [{ id: 'asc' }, { b: 'desc' }] },
         };
       });
 
@@ -70,7 +70,7 @@ describe('GIVEN the verifyDecodedCursor method', () => {
     beforeEach(() => {
       decodedCursor = {
         data: { id: 'mockId', a: 'mockA' },
-        args: { orderBy: [{ id: SortOrder.Ascending }, { a: SortOrder.Descending }] },
+        args: { orderBy: [{ id: 'asc' }, { a: 'desc' }] },
       };
     });
 

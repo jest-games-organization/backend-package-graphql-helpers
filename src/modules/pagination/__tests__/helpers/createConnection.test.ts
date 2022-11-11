@@ -1,4 +1,3 @@
-import { ConnectionArgs } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createConnection } from '../../helpers/createConnection';
 import { createCursor } from '../../helpers/createCursor';
@@ -11,13 +10,13 @@ describe('GIVEN the createConnection method', () => {
   let records: { [key: string]: any }[];
   let hasNextPage: boolean;
   let hasPreviousPage: boolean;
-  let args: ConnectionArgs<typeof records[0]>;
+  let args: { orderBy: { [key in keyof typeof records[0]]?: 'asc' | 'desc' }[] };
 
   beforeEach(() => {
     records = [{ id: 'mockId1' }, { id: 'mockId2' }];
     hasNextPage = false;
     hasPreviousPage = false;
-    args = {};
+    args = { orderBy: [{ id: 'asc' }] };
   });
 
   describe('AND the "config" prop', () => {
@@ -28,18 +27,18 @@ describe('GIVEN the createConnection method', () => {
           edges: [
             {
               node: { id: 'mockId1' },
-              cursor: encodeObject({ data: {}, args }),
+              cursor: encodeObject({ data: { id: 'mockId1' }, args }),
             },
             {
               node: { id: 'mockId2' },
-              cursor: encodeObject({ data: {}, args }),
+              cursor: encodeObject({ data: { id: 'mockId2' }, args }),
             },
           ],
           pageInfo: {
             hasNextPage,
             hasPreviousPage,
-            startCursor: encodeObject({ data: {}, args }),
-            endCursor: encodeObject({ data: {}, args }),
+            startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+            endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
           },
         };
         expect(response).toEqual(expected);
@@ -56,18 +55,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -82,18 +81,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -110,18 +109,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -136,18 +135,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -164,18 +163,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -190,18 +189,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -218,18 +217,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -244,18 +243,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -272,18 +271,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -298,18 +297,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -326,18 +325,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);
@@ -352,18 +351,18 @@ describe('GIVEN the createConnection method', () => {
               edges: [
                 {
                   node: { id: 'mockId1' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId1' }, args }),
                 },
                 {
                   node: { id: 'mockId2' },
-                  cursor: encodeObject({ data: {}, args }),
+                  cursor: encodeObject({ data: { id: 'mockId2' }, args }),
                 },
               ],
               pageInfo: {
                 hasNextPage,
                 hasPreviousPage,
-                startCursor: encodeObject({ data: {}, args }),
-                endCursor: encodeObject({ data: {}, args }),
+                startCursor: encodeObject({ data: { id: 'mockId1' }, args }),
+                endCursor: encodeObject({ data: { id: 'mockId2' }, args }),
               },
             };
             expect(response).toEqual(expected);

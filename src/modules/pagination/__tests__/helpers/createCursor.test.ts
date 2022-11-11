@@ -1,4 +1,3 @@
-import { ConnectionArgs, SortOrder } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { createCursor } from '../../helpers/createCursor';
 
@@ -11,22 +10,11 @@ describe('GIVEN the createCursor method', () => {
 
   describe('AND the "args" prop', () => {
     describe('AND the "orderBy" field', () => {
-      describe('WHEN the "orderBy" field is not provided', () => {
-        test('THEN it should return the cursor', () => {
-          const args: ConnectionArgs<typeof record> = {};
-          const response = createCursor(record, args);
-          const expected = encodeObject({ data: {}, args });
-          expect(response).toEqual(expected);
-        });
-      });
-
-      describe('WHEN the "orderBy" field is provided', () => {
-        test('THEN it should return the cursor', () => {
-          const args: ConnectionArgs<typeof record> = { orderBy: [{ id: SortOrder.Ascending }] };
-          const response = createCursor(record, args);
-          const expected = encodeObject({ data: { id: 'mockId' }, args });
-          expect(response).toEqual(expected);
-        });
+      test('THEN it should return the cursor', () => {
+        const args: { orderBy: { [key in keyof typeof record]?: 'asc' | 'desc' }[] } = { orderBy: [{ id: 'asc' }] };
+        const response = createCursor(record, args);
+        const expected = encodeObject({ data: { id: 'mockId' }, args });
+        expect(response).toEqual(expected);
       });
     });
   });
@@ -34,9 +22,9 @@ describe('GIVEN the createCursor method', () => {
   describe('AND the "config" prop', () => {
     describe('WHEN the "config" prop is not provided', () => {
       test('THEN it should return the cursor', () => {
-        const args: ConnectionArgs<typeof record> = {};
+        const args: { orderBy: { [key in keyof typeof record]?: 'asc' | 'desc' }[] } = { orderBy: [{ id: 'asc' }] };
         const response = createCursor(record, args);
-        const expected = encodeObject({ data: {}, args });
+        const expected = encodeObject({ data: { id: 'mockId' }, args });
         expect(response).toEqual(expected);
       });
     });
@@ -45,20 +33,20 @@ describe('GIVEN the createCursor method', () => {
       describe('AND the "encodeObject" field', () => {
         describe('WHEN the "encodeObject" field is not provided', () => {
           test('THEN it should return the cursor', () => {
-            const args: ConnectionArgs<typeof record> = {};
+            const args: { orderBy: { [key in keyof typeof record]?: 'asc' | 'desc' }[] } = { orderBy: [{ id: 'asc' }] };
             const config = {};
             const response = createCursor(record, args, config);
-            const expected = encodeObject({ data: {}, args });
+            const expected = encodeObject({ data: { id: 'mockId' }, args });
             expect(response).toEqual(expected);
           });
         });
 
         describe('WHEN the "encodeObject" field is provided', () => {
           test('THEN it should return the cursor', () => {
-            const args: ConnectionArgs<typeof record> = {};
+            const args: { orderBy: { [key in keyof typeof record]?: 'asc' | 'desc' }[] } = { orderBy: [{ id: 'asc' }] };
             const config = { encodeObject };
             const response = createCursor(record, args, config);
-            const expected = encodeObject({ data: {}, args });
+            const expected = encodeObject({ data: { id: 'mockId' }, args });
             expect(response).toEqual(expected);
           });
         });
